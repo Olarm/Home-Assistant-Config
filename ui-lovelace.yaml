@@ -1,0 +1,103 @@
+title: Hytta
+
+views:
+
+#Hovedmeny
+  - id: 0
+    title: Hjem
+    cards:
+      
+      - type: entities
+        show_header_toggle: false
+        title: Moens klimapanel
+        entities:          
+          - sensor.aeotec_zw100_multisensor_6_temperature_3
+          - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
+          - sensor.aeotec_zw100_multisensor_6_relative_humidity_3
+          - sensor.stue_humidity
+          - sensor.stue_temperature 
+          - sensor.ute_temperature 
+
+      - type: entities
+        show_header_toggle: false
+        title: Brytere
+        entities:
+          - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3
+          - switch.ovn_soverom
+          - switch.ovn_stue_n
+          - switch.ovn_stue_s
+          - switch.d1
+
+#Brann
+  - id: 1
+    title: Alarm
+    cards:
+
+      - type: entities
+        show_header_toggle: false
+        title: Brann
+        entities:
+          - sensor.fibaro_system_fgsd002_smoke_sensor_general
+          - sensor.fibaro_system_fgsd002_smoke_sensor_heat
+          - sensor.fibaro_system_fgsd002_smoke_sensor_smoke
+           
+#Stromforbruk
+  - title: Stromforbruk
+    cards:
+
+      - type: entities
+        show_header_toggle: false
+        title: Ovner
+        entities:
+          - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2
+          - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_5
+
+      - type: sensor
+        entity: sensor.fibaro_system_fgwpef_wall_plug_gen5_power_5
+
+      - type: history-graph
+        title: 'bryter historikk'
+        entities:
+          - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3
+
+#Serverstatus
+  - title: Serverstatus
+    cards:
+    
+      - type: entities
+        show_header_toggle: false
+        title: System
+        entities:
+          - sensor.processor_use
+          - sensor.load_1m
+          - sensor.load_5m
+          - sensor.load_15m
+          - sensor.memory_use_percent
+          - sensor.disk_use_percent_
+          - sensor.last_boot
+
+#Handleliste
+  - title: Handleliste
+    cards:
+       
+      - type: shopping-list
+        show_header_toggle: false
+        title: Hjemme
+
+      - type: shopping-list
+        show_header_toggle: false
+        title: Fjellet
+
+      - type: shopping-list
+        show_header_toggle: false
+        title: Kysten
+
+
+#Test
+  - title: Test
+    cards:
+
+      - type: markdown
+        title: testing
+        content: >
+          testtekst

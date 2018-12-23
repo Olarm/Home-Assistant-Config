@@ -1,0 +1,25 @@
+
+ - alias: Check sensor value show notification
+   trigger:
+     platform: numeric_state
+     entity_id: sensor.stue_temperature
+     above: 22
+   action:
+     service: persistent_notification.create
+     data:
+       message: "Sensor value greater then 22"
+
+ - alias: Varsling for utetemperatur
+   trigger:
+     platform: numeric_state
+     entity_id: sensor.ute_temperature
+     below: -10
+   action:
+     service: persistent_notification.create
+     data:
+       message: "Under -10 ute"
+
+       # - alias: Endret IP addresse
+       #trigger:
+       #platform: state
+       #entity_id 
