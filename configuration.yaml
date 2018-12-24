@@ -73,11 +73,7 @@ telegram_bot:
     api_key: !secret telegram_api_key
     allowed_chat_ids:
       - !secret chat_id_1
-
-notify:
-  - name: !secret bot_name
-    platform: telegram
-    chat_id: !secret chat_id_1
+      - !secret chat_id_2
 
 tellduslive:
         #  public key: !secret public_key
@@ -85,10 +81,12 @@ tellduslive:
         #  token: !secret token
         #  token secret: !secret token_secret
 
+notify: !include includes/notify.yaml
 group: !include includes/groups.yaml
 automation: !include includes/automations.yaml
 script: !include includes/scripts.yaml
 sensor: !include includes/sensors.yaml
+#climate: !include includes/climate.yaml
 
 panel_iframe:
   weather:

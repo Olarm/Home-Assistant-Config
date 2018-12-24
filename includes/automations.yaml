@@ -8,6 +8,11 @@
      service: persistent_notification.create
      data:
        message: "Sensor value greater then 22"
+   action:
+     service: notify.telegram
+     data:
+       title: "send temperatur varsling"
+
 
  - alias: Varsling for utetemperatur
    trigger:
@@ -19,7 +24,9 @@
      data:
        message: "Under -10 ute"
 
-       # - alias: Endret IP addresse
-       #trigger:
-       #platform: state
-       #entity_id 
+ - alias: Endret IP addresse
+   trigger:
+     platform: state
+     entity_id: sensor.ip
+   action:
+     service: scripts.telegram_send_ip

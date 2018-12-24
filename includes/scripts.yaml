@@ -1,0 +1,9 @@
+telegram_send_ip:
+  alias: 'send ip'
+  sequence:
+    - service: notify.Ola
+      data_template:
+        message: '{{ states.sensor.ip_addresse.state }}'
+    - service: notify.Terje
+      data_template:
+        message: '{{ states.sensor.ip_addresse.state }}'

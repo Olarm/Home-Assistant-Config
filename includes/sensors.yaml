@@ -20,4 +20,5 @@
 
 - platform: command_line
   name: IP addresse
+  entity_id: sensor.ip
   command: "curl ifconfig.me"
