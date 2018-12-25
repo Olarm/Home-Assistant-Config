@@ -3,22 +3,24 @@ title: Hytta
 views:
 
 #Hovedmeny
-  - id: 0
+  - id: Hjem
     title: Hjem
     cards:
-      
-      - type: entities
+
+      - id: klimasensorer
+        type: entities
         show_header_toggle: false
         title: Moens klimapanel
         entities:          
           - sensor.aeotec_zw100_multisensor_6_temperature_3
-          - sensor.fibaro_system_fgsd002_smoke_sensor_temperature
+          - sensor.smoke_sensor_temperature_stue
           - sensor.aeotec_zw100_multisensor_6_relative_humidity_3
           - sensor.stue_humidity
           - sensor.stue_temperature 
           - sensor.ute_temperature 
 
-      - type: entities
+      - id: brytere
+        type: entities
         show_header_toggle: false
         title: Brytere
         entities:
@@ -27,44 +29,57 @@ views:
           - switch.ovn_stue_n
           - switch.ovn_stue_s
           - switch.d1
+          
+      - id: Termostat_stue
+        type: thermostat
+        show_header_toggle: false
+        title: Stue
+        entity: climate.Stue
 
 #Brann
-  - id: 1
+  - id: Alarmsystem
     title: Alarm
     cards:
-
-      - type: entities
+        
+      - id: Brannalarm
+        type: entities
         show_header_toggle: false
         title: Brann
         entities:
-          - sensor.fibaro_system_fgsd002_smoke_sensor_general
-          - sensor.fibaro_system_fgsd002_smoke_sensor_heat
-          - sensor.fibaro_system_fgsd002_smoke_sensor_smoke
+          - sensor.smoke_sensor_general_stue
+          - sensor.smoke_sensor_heat_stue
+          - sensor.smoke_sensor_smoke_stue
            
 #Stromforbruk
-  - title: Stromforbruk
+  - id: Forbruk
+    title: Stromforbruk
     cards:
 
-      - type: entities
+      - id: effekt_sensorer      
+        type: entities
         show_header_toggle: false
         title: Ovner
         entities:
           - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy_2
           - sensor.fibaro_system_fgwpef_wall_plug_gen5_power_5
 
-      - type: sensor
+      - id: bryter_forbruk_graf
+        type: sensor
         entity: sensor.fibaro_system_fgwpef_wall_plug_gen5_power_5
 
-      - type: history-graph
+      - id: bryter_historikk
+        type: history-graph
         title: 'bryter historikk'
         entities:
           - switch.fibaro_system_fgwpef_wall_plug_gen5_switch_3
 
 #Serverstatus
-  - title: Serverstatus
+  - id: Server_statuser
+    title: Serverstatus
     cards:
     
-      - type: entities
+      - id: server_status
+        type: entities
         show_header_toggle: false
         title: System
         entities:
@@ -77,27 +92,32 @@ views:
           - sensor.last_boot
 
 #Handleliste
-  - title: Handleliste
+  - id: handlelister
+    title: Handleliste
     cards:
        
-      - type: shopping-list
+      - id: shopping_hjemme
+        type: shopping-list
         show_header_toggle: false
         title: Hjemme
 
-      - type: shopping-list
+      - id: shopping_fjellet
+        type: shopping-list
         show_header_toggle: false
         title: Fjellet
 
-      - type: shopping-list
+      - id: shopping_kysten
+        type: shopping-list
         show_header_toggle: false
         title: Kysten
 
 
 #Test
-  - title: Test
+  - id: testetab
+    title: Test
     cards:
 
-      - type: markdown
-        title: testing
-        content: >
-          testtekst
+      - id: testetermostat
+        type: thermostat
+        show_header_toggle: false
+        entity: climate.Stue

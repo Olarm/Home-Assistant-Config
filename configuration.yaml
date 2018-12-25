@@ -86,14 +86,9 @@ group: !include includes/groups.yaml
 automation: !include includes/automations.yaml
 script: !include includes/scripts.yaml
 sensor: !include includes/sensors.yaml
-#climate: !include includes/climate.yaml
+climate: !include includes/climate.yaml
 
 panel_iframe:
-  weather:
-    title: Yr
-    icon: mdi:weather-hail
-    url: http://www.yr.no/
-  
   weather:
     title: Meisal
     icon: mdi:weather-snowy

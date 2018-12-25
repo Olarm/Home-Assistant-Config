@@ -1,0 +1,5 @@
+- platform: generic_thermostat
+  entity_id: Stue
+  name: Stue
+  heater: group.stue_ovner
+  target_sensor: sensor.stue_temperature

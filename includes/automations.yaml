@@ -5,13 +5,12 @@
      entity_id: sensor.stue_temperature
      above: 22
    action:
-     service: persistent_notification.create
-     data:
-       message: "Sensor value greater then 22"
-   action:
-     service: notify.telegram
-     data:
-       title: "send temperatur varsling"
+     - service: persistent_notification.create
+       data:
+         message: "Sensor value greater then 22"
+     - service: notify.telegram
+       data:
+         title: "send temperatur varsling"
 
 
  - alias: Varsling for utetemperatur

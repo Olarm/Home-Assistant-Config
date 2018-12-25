@@ -6,10 +6,10 @@
 #    - group.all_switches
 #    - sensor.disk_free
 
-brytere_view:
-  view: yes
-  name: brytere
-  icon: mdi:account-multiple
+stue_ovner:
+  view: true
+  name: stue ovner
+  icon: mdi:home
   entities:
-    - sensor.disk_free
-    - sensor.disk_use_percent
+    - switch.ovn_stue_n
+    - switch.ovn_stue_s
