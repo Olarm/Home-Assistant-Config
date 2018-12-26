@@ -1,5 +1,5 @@
-telegram_send_ip:
-  alias: 'send ip'
+telegram_ip_fornyet:
+  alias: 'send ip hvis endret'
   sequence:
     - service: notify.Ola
       data_template:
@@ -7,3 +7,4 @@ telegram_send_ip:
     - service: notify.Terje
       data_template:
         message: '{{ states.sensor.ip_addresse.state }}'
+

@@ -24,8 +24,21 @@
        message: "Under -10 ute"
 
  - alias: Endret IP addresse
+   hide_entity: true
    trigger:
      platform: state
      entity_id: sensor.ip
    action:
-     service: scripts.telegram_send_ip
+     service: scripts.telegram_ip_fornyet
+
+ - alias: gi IP addresse
+   trigger:
+     platform: event
+     event_type: telegram_command
+     event_data:
+       command: '/ip'
+   action:
+     - service: telegram_bot.send_message
+       data_template:
+         target: '{{ trigger.event.data.user_id }}'
+         message: '{{ states.sensor.ip_addresse.state }}'
