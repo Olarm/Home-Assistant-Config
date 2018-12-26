@@ -42,3 +42,20 @@
        data_template:
          target: '{{ trigger.event.data.user_id }}'
          message: '{{ states.sensor.ip_addresse.state }}'
+
+#BRANNVARSLING
+ - alias: Brannalarm stue
+   trigger:
+   - platform: state
+     entity_id: sensor.smoke_sensor_alarm_level_stue
+     to: '255'
+   action:
+   - service: notify.Terje
+     data:
+       title: "Brann!"
+       message: "Brannalarm i stua"
+   - service: notify.Ola
+     data:
+       title: "Brann!"
+       message: "Brannalarm i stua"
+
