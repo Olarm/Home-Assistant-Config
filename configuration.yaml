@@ -12,6 +12,10 @@ homeassistant:
   time_zone: UTC
   # Customization file
   customize: !include includes/customize.yaml
+  
+  auth_providers:
+    - type: homeassistant
+    - type: legacy_api_password
 
 lovelace:
   mode: yaml
@@ -23,8 +27,16 @@ frontend:
 config:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-# http:
-#   base_url: example.duckdns.org:8123
+http:
+  api_password: !secret api_password
+  server_port: 8123
+  use_x_forwarded_for: True
+  trusted_proxies:
+    - 172.17.0.1
+    - 127.0.0.1
+  #trusted_networks:
+  ip_ban_enabled: true #blocks unathorized ips from accessing HA
+  login_attempts_threshold: 5 #number of attempts before ip is banned
 
 # Checks for available updates
 # Note: This component will send some information about your system to

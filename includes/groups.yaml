@@ -13,3 +13,7 @@ stue_ovner:
   entities:
     - switch.ovn_stue_n
     - switch.ovn_stue_s
+
+      #smoke_sensor_status:
+        #  name: "Roykvarslere"
+#  entities:
