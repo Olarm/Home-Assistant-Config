@@ -17,7 +17,8 @@ views:
           - sensor.aeotec_zw100_multisensor_6_relative_humidity_3
           - sensor.stue_humidity
           - sensor.stue_temperature 
-          - sensor.ute_temperature 
+          - sensor.smoke_sensor_temperature_loftstue
+          - sensor.ute_temperature
 
       - id: brytere
         type: entities
@@ -34,7 +35,7 @@ views:
         type: thermostat
         show_header_toggle: false
         title: Stue
-        entity: climate.Stue
+        entity: climate.stue
 
 #Brann
   - id: Alarmsystem
@@ -90,27 +91,18 @@ views:
           - sensor.memory_use_percent
           - sensor.disk_use_percent_
           - sensor.last_boot
+          - sensor.network_in
+          - sensor.network_out
 
 #Handleliste
   - id: handlelister
     title: Handleliste
     cards:
-       
-      - id: shopping_hjemme
-        type: shopping-list
-        show_header_toggle: false
-        title: Hjemme
 
       - id: shopping_fjellet
         type: shopping-list
         show_header_toggle: false
         title: Fjellet
-
-      - id: shopping_kysten
-        type: shopping-list
-        show_header_toggle: false
-        title: Kysten
-
 
 #Test
   - id: testetab

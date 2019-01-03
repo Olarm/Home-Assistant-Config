@@ -23,6 +23,8 @@
      data:
        message: "Under -10 ute"
 
+       ##Systemrelatert
+
  - alias: Endret IP addresse
    hide_entity: true
    trigger:
@@ -42,6 +44,18 @@
        data_template:
          target: '{{ trigger.event.data.user_id }}'
          message: '{{ states.sensor.ip_addresse.state }}'
+
+ - alias: Login Failure
+   trigger:
+     platform: state
+     entity_id: persistent_notification.httplogin
+   condition:
+     condition: template
+     value_template: "{{ trigger.to_state.state != off }}"
+   action:
+     service: notify.Ola
+     data:
+       message: "Failed Home Assistant login attempt!"
 
 #BRANNVARSLING
  - alias: Brannalarm stue

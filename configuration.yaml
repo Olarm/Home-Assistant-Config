@@ -13,10 +13,6 @@ homeassistant:
   # Customization file
   customize: !include includes/customize.yaml
   
-  auth_providers:
-    - type: homeassistant
-    - type: legacy_api_password
-
 lovelace:
   mode: yaml
 
@@ -28,7 +24,6 @@ config:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 http:
-  api_password: !secret api_password
   server_port: 8123
   use_x_forwarded_for: True
   trusted_proxies:
@@ -76,8 +71,9 @@ tts:
 # Cloud
 cloud:
 
-# Python script
 python_script:
+shopping_list:
+  show: false
 
 # telegram
 telegram_bot:
