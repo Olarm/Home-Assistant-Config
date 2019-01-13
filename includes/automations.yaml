@@ -73,3 +73,21 @@
        title: "Brann!"
        message: "Brannalarm i stua"
 
+ - alias: temperaturvarsel
+   trigger:
+     platform: numeric_state
+     entity_id: sensor.smoke_sensor_temperature_stue
+     above: 35
+   action:
+   - service: persistent_notification.create
+     data:
+       message: "Over 35 grader i stuetaket"
+   - service: notify.Ola
+     data:
+       title: "temperaturvarsel"
+       message: "temperatur i stuetaket over 35 grader"
+   - service: notify.Terje
+     data:
+       title: "Temperaturvarsel !!TEST!!"
+       message: "temperatur i stuetaket over 35 grader"
+

@@ -22,3 +22,18 @@
   name: IP addresse
   entity_id: sensor.ip
   command: "curl ifconfig.me"
+
+- platform: template
+  sensors:
+    smoke_sensor_stue_batteri:
+      friendly_name: 'roykvarsler stue'
+      value_template: '{{ states.zwave.smoke_sensor_stue_overordnet.attributes.battery_level }}'
+      device_class: battery
+      unit_of_measurement: '%'
+    
+    smoke_sensor_loftstue_batteri:
+      friendly_name: 'roykvarsler loftstue'
+      value_template: '{{ states.zwave.smoke_sensor_loftstue_overordnet.attributes.battery_level }}'
+      device_class: battery
+      unit_of_measurement: '%'
+

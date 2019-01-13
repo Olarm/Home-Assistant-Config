@@ -48,9 +48,17 @@ views:
         title: Brann
         entities:
           - sensor.smoke_sensor_general_stue
-          - sensor.smoke_sensor_heat_stue
-          - sensor.smoke_sensor_smoke_stue
-           
+          - sensor.smoke_sensor_heat_stue_1
+          - sensor.smoke_sensor_smoke_stue_1
+
+      - id: Sensorstatus
+        type: entities
+        show_header_toggle: false
+        title: Sensorstatus
+        entities:
+          - sensor.smoke_sensor_stue_batteri
+          - sensor.smoke_sensor_loftstue_batteri
+
 #Stromforbruk
   - id: Forbruk
     title: Stromforbruk
