@@ -11,10 +11,6 @@
     - type: load_1m
     - type: load_5m
     - type: load_15m
-    - type: network_in
-      arg: wlan0
-    - type: network_out
-      arg: wlan0
     - type: processor_use
     - type: last_boot
 

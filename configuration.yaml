@@ -101,3 +101,4 @@ panel_iframe:
     title: Meisal
     icon: mdi:weather-snowy
     url: !secret meisal
+

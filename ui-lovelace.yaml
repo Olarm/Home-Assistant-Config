@@ -99,8 +99,6 @@ views:
           - sensor.memory_use_percent
           - sensor.disk_use_percent_
           - sensor.last_boot
-          - sensor.network_in
-          - sensor.network_out
 
 #Handleliste
   - id: handlelister

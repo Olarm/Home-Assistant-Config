@@ -3,11 +3,11 @@
    trigger:
      platform: numeric_state
      entity_id: sensor.stue_temperature
-     above: 22
+     above: 35
    action:
      - service: persistent_notification.create
        data:
-         message: "Sensor value greater then 22"
+         message: "Sensor value greater then 35"
      - service: notify.telegram
        data:
          title: "send temperatur varsling"
