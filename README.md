@@ -1,6 +1,6 @@
 # Home-Assistant-Config
 
-ongoing home automation project for a cabin.
+ongoing home automation project.
 
 ### Hardware
 - Raspberry pi with USB z-wave controller
