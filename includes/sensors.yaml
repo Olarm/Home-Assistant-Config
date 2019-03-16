@@ -22,14 +22,46 @@
 - platform: template
   sensors:
     smoke_sensor_stue_batteri:
-      friendly_name: 'roykvarsler stue'
+      friendly_name: 'roykvarsler batteri stue'
       value_template: '{{ states.zwave.smoke_sensor_stue_overordnet.attributes.battery_level }}'
       device_class: battery
       unit_of_measurement: '%'
     
     smoke_sensor_loftstue_batteri:
-      friendly_name: 'roykvarsler loftstue'
+      friendly_name: 'roykvarsler batteri loftstue'
       value_template: '{{ states.zwave.smoke_sensor_loftstue_overordnet.attributes.battery_level }}'
       device_class: battery
       unit_of_measurement: '%'
 
+    smoke_sensor_loftstue_smoke:
+      friendly_name: 'røykvarsler loftstue'
+      value_template: >-
+        {% if is_state("sensor.smoke_sensor_smoke_loftstue_2", "255") %}
+          Alarm
+        {% elif is_state("sensor.smoke_sensor_burglar_loftstue", "3") %}
+          Not mounted
+        {% else %}
+          Standby
+        {% endif %}
+    
+    smoke_sensor_stue_smoke:
+      friendly_name: 'røykvarsler stue'
+      value_template: >-
+        {% if is_state("sensor.smoke_sensor_smoke_stue_2", "255") %}
+          Alarm
+        {% elif is_state("sensor.smoke_sensor_burglar_stue", "3") %}
+          Demontert
+        {% else %}
+          Venter
+        {% endif %}
+
+    multisensor_hall:
+      friendly_name: 'bevegelse gang'
+      value_template: >-
+        {% if is_state(sensor.aeotec_zw100_multisensor_6_burglar_3", "8") %}
+          Bevegelse
+        {% elif is_state("sensor.aeotec_zw100_multisensor_6_burglar_3", "0") %}
+          Ingen bevegelse
+        {% else %}
+          Ingen bevegelse
+        {% endif %}

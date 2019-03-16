@@ -50,7 +50,9 @@ views:
           - sensor.smoke_sensor_general_stue
           - sensor.smoke_sensor_heat_stue_1
           - sensor.smoke_sensor_smoke_stue_1
-
+          - sensor.smoke_sensor_smoke_stue_2
+          - sensor.smoke_sensor_smoke_loftstue_2
+          - sensor.smoke_sensor_smoke_loftstue_1
       - id: Sensorstatus
         type: entities
         show_header_toggle: false

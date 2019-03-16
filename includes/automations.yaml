@@ -61,7 +61,7 @@
  - alias: Brannalarm stue
    trigger:
    - platform: state
-     entity_id: sensor.smoke_sensor_alarm_level_stue
+     entity_id: sensor.smoke_sensor_smoke_stue_1
      to: '255'
    action:
    - service: notify.Terje
@@ -91,3 +91,17 @@
        title: "Temperaturvarsel !!TEST!!"
        message: "temperatur i stuetaket over 35 grader"
 
+ - alias: Brannalarm loftstue
+   trigger:
+   - platform: state
+     entity_id: sensor.smoke_sensor_smoke_loftstue_2
+     to: '255'
+   action:
+   - service: notify.Terje
+     data:
+       title: "Brann!"
+       message: "røykvarsler utløst i loftstua"
+   - service: notify.Ola
+     data:
+       title: "Brann!"
+       message: "røykvarsler utløst i loftstua"

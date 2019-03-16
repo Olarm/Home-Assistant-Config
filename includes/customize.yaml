@@ -1,10 +1,10 @@
 zwave.aeotec_zw100_multisensor_6:
-  hidden: true
+  hidden: false
   friendly_name: multisensor
 sensor.fibaro_system_fgsd002_smoke_sensor_alarm_level:
-  hidden: true
+  hidden: false
   friendly_name: multisensor alar level
 sensor.fibaro_system_fgsd002_smoke_sensor_alarm_type:
-  hidden: true
+  hidden: false
 sensor.fibaro_system_fgsd002_smoke_sensor_burglar:
-  hidden: true
+  hidden: false
