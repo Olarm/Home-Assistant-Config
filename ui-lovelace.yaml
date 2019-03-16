@@ -38,10 +38,10 @@ views:
         entity: climate.stue
 
 #Brann
+
   - id: Alarmsystem
     title: Alarm
     cards:
-        
       - id: Brannalarm
         type: entities
         show_header_toggle: false

@@ -55,13 +55,3 @@
           Venter
         {% endif %}
 
-    multisensor_hall:
-      friendly_name: 'bevegelse gang'
-      value_template: >-
-        {% if is_state(sensor.aeotec_zw100_multisensor_6_burglar_3", "8") %}
-          Bevegelse
-        {% elif is_state("sensor.aeotec_zw100_multisensor_6_burglar_3", "0") %}
-          Ingen bevegelse
-        {% else %}
-          Ingen bevegelse
-        {% endif %}
