@@ -39,9 +39,9 @@
         {% if is_state("sensor.smoke_sensor_smoke_loftstue_2", "255") %}
           Alarm
         {% elif is_state("sensor.smoke_sensor_burglar_loftstue", "3") %}
-          Not mounted
+          Demontert
         {% else %}
-          Standby
+          Venter
         {% endif %}
     
     smoke_sensor_stue_smoke:
@@ -55,3 +55,11 @@
           Venter
         {% endif %}
 
+    movement_hall:
+      friendly_name: 'Bevegelse gang'
+      value_template: >-
+        {% if is_state("sensor.aeotec_zw100_multisensor_6_burglar_3", "8") %}
+          Bevegelse
+        {% else %}
+          Ingen bevegelse
+        {% endif %}
