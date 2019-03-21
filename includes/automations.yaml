@@ -45,6 +45,19 @@
          target: '{{ trigger.event.data.user_id }}'
          message: '{{ states.sensor.ip_addresse.state }}'
 
+ - alias: list banned
+   trigger:
+     platform: event
+     event_type: telegram_command
+     event_data:
+       command: '/banned'
+   action:
+     - service: telegram_bot.send_message
+       data_template:
+         target: '{{ trigger.event.data.user_id }}'
+         message: '{{ trigger.event.data.command }}'
+    
+
  - alias: Login Failure
    trigger:
      platform: state
@@ -105,3 +118,4 @@
      data:
        title: "Brann!"
        message: "røykvarsler utløst i loftstua"
+

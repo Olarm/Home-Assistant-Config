@@ -95,6 +95,7 @@ automation: !include includes/automations.yaml
 script: !include includes/scripts.yaml
 sensor: !include includes/sensors.yaml
 climate: !include includes/climate.yaml
+shell_command: !include includes/shell_commands.yaml
 
 panel_iframe:
   weather:
