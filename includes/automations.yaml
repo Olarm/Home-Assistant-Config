@@ -119,3 +119,15 @@
        title: "Brann!"
        message: "røykvarsler utløst i loftstua"
 
+####### Innbruddsalarm
+
+ - alias: Alarm gang
+   trigger:
+     - platform: state
+       entity_id: sensor.movement_hall
+       to: 'Bevegelse'
+   action:
+     service: notify.Ola
+     data:
+       title: "Alarm!"
+       message: "Bevegelse i gangen!"

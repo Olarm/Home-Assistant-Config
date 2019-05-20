@@ -42,6 +42,13 @@ views:
   - id: Alarmsystem
     title: Alarm
     cards:
+      - id: Alarm_styring
+        type: entities
+        show_header_toggle: false
+        title: Alarm styring
+        entities:
+          - automation.alarm_gang      
+
       - id: Brannalarm
         type: entities
         show_header_toggle: false

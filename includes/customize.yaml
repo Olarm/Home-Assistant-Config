@@ -4,7 +4,7 @@
 
   sensor.fibaro_system_fgsd002_smoke_sensor_alarm_level:
     hidden: false
-    friendly_name: multisensor alar level
+    friendly_name: Smoke Sensor
 
   sensor.fibaro_system_fgsd002_smoke_sensor_alarm_type:
     hidden: false
