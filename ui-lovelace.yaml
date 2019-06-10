@@ -108,9 +108,6 @@ views:
         title: System
         entities:
           - sensor.processor_use
-          - sensor.load_1m
-          - sensor.load_5m
-          - sensor.load_15m
           - sensor.memory_use_percent
           - sensor.disk_use_percent_
           - sensor.last_boot
